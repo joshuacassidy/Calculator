@@ -1,6 +1,12 @@
 package calculator;
 
-public class CalculatorGUI extends javax.swing.JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.WindowConstants;
+
+public class CalculatorGUI extends JFrame {
     double num,ans;
     int action;
 
@@ -12,39 +18,30 @@ public class CalculatorGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        display = new javax.swing.JTextField();
-        addBtn = new javax.swing.JButton();
-        clearBtn = new javax.swing.JButton();
-        backSpaceBtn = new javax.swing.JButton();
-        minusBtn = new javax.swing.JButton();
-        btn9 = new javax.swing.JButton();
-        btn8 = new javax.swing.JButton();
-        btn7 = new javax.swing.JButton();
-        multiplicationBtn = new javax.swing.JButton();
-        btn6 = new javax.swing.JButton();
-        btn5 = new javax.swing.JButton();
-        btn4 = new javax.swing.JButton();
-        equalsBtn = new javax.swing.JButton();
-        decimalPointBtn = new javax.swing.JButton();
-        btn0 = new javax.swing.JButton();
-        divideBtn = new javax.swing.JButton();
-        btn3 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        btn1 = new javax.swing.JButton();
 
-        jButton13.setText("jButton1");
+        display = new JTextField();
+        addBtn = new JButton();
+        clearBtn = new JButton();
+        backSpaceBtn = new JButton();
+        minusBtn = new JButton();
+        btn9 = new JButton();
+        btn8 = new JButton();
+        btn7 = new JButton();
+        multiplicationBtn = new JButton();
+        btn6 = new JButton();
+        btn5 = new JButton();
+        btn4 = new JButton();
+        equalsBtn = new JButton();
+        decimalPointBtn = new JButton();
+        btn0 = new JButton();
+        divideBtn = new JButton();
+        btn3 = new JButton();
+        btn2 = new JButton();
+        btn1 = new JButton();
 
-        jButton14.setText("jButton1");
+ 
 
-        jButton15.setText("jButton1");
-
-        jButton16.setText("jButton1");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         display.setEditable(false);
@@ -91,7 +88,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn9.setText("9");
         btn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn9ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -99,7 +96,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn8.setText("8");
         btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn8ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -107,7 +104,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn7.setText("7");
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn7ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -123,7 +120,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn6.setText("6");
         btn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn6ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -131,7 +128,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn5.setText("5");
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -139,7 +136,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn4.setText("4");
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -163,7 +160,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn0.setText("0");
         btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -179,7 +176,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn3.setText("3");
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -187,7 +184,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn2.setText("2");
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -195,7 +192,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         btn1.setText("1");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -321,48 +318,13 @@ public class CalculatorGUI extends javax.swing.JFrame {
         }
     }
     
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "1");
-    }
 
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "2");
-    }
-
-    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "3");
-    }
-
-    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "4");
-    }
-
-    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "5");
-    }
-
-    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "6");
-    }
-
-    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "7");
+    private void btnActionPerformed(java.awt.event.ActionEvent evt) {
+        display.setText(display.getText() + evt.getActionCommand());
 
     }
 
-    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "8");
-
-    }
-
-    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "9");
-    }
-
-    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + "0");
-    }
 
     private void decimalPointBtnActionPerformed(java.awt.event.ActionEvent evt) {
         if(!display.getText().contains(".")){
@@ -423,13 +385,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CalculatorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CalculatorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CalculatorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException |IllegalAccessException | UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CalculatorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
@@ -440,28 +396,9 @@ public class CalculatorGUI extends javax.swing.JFrame {
         });
     }
 
-    private javax.swing.JButton addBtn;
-    private javax.swing.JButton backSpaceBtn;
-    private javax.swing.JButton btn0;
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JButton btn3;
-    private javax.swing.JButton btn4;
-    private javax.swing.JButton btn5;
-    private javax.swing.JButton btn6;
-    private javax.swing.JButton btn7;
-    private javax.swing.JButton btn8;
-    private javax.swing.JButton btn9;
-    private javax.swing.JButton clearBtn;
-    private javax.swing.JButton decimalPointBtn;
+    private javax.swing.JButton addBtn,backSpaceBtn,btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,clearBtn,decimalPointBtn,minusBtn,divideBtn,equalsBtn,multiplicationBtn;
     private javax.swing.JTextField display;
-    private javax.swing.JButton divideBtn;
-    private javax.swing.JButton equalsBtn;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton minusBtn;
-    private javax.swing.JButton multiplicationBtn;
+
+
     
 }
