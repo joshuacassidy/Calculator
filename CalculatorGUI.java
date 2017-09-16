@@ -1,8 +1,17 @@
 package calculator;
 
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
 
@@ -39,162 +48,108 @@ public class CalculatorGUI extends JFrame {
         btn2 = new JButton();
         btn1 = new JButton();
 
- 
-
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         display.setEditable(false);
-        display.setFont(new java.awt.Font("Tahoma", 1, 18)); 
-        display.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        display.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-            }
-        });
+        display.setFont(new Font("Tahoma", 1, 18)); 
+        display.setHorizontalAlignment(JTextField.RIGHT);
+        
 
-        addBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        addBtn.setFont(new Font("Tahoma", 1, 14)); 
         addBtn.setText("+");
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        addBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
 
-        clearBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        clearBtn.setFont(new Font("Tahoma", 1, 14)); 
         clearBtn.setText("C");
-        clearBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        clearBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 clearBtnActionPerformed(evt);
             }
         });
 
-        backSpaceBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        backSpaceBtn.setFont(new Font("Tahoma", 1, 14)); 
         backSpaceBtn.setText("Backspace");
-        backSpaceBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        backSpaceBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 backSpaceBtnActionPerformed(evt);
             }
         });
 
-        minusBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        minusBtn.setFont(new Font("Tahoma", 1, 14)); 
         minusBtn.setText("-");
-        minusBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        minusBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 minusBtnActionPerformed(evt);
             }
         });
 
-        btn9.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn9.setText("9");
-        btn9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn9);
 
-        btn8.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn8.setText("8");
-        btn8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn8);
 
-        btn7.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+
         btn7.setText("7");
-        btn7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn7);
 
-        multiplicationBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        multiplicationBtn.setFont(new Font("Tahoma", 1, 14)); 
         multiplicationBtn.setText("*");
-        multiplicationBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        multiplicationBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 multiplicationBtnActionPerformed(evt);
             }
         });
 
-        btn6.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn6.setText("6");
-        btn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn6);
 
-        btn5.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn5.setText("5");
-        btn5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn5);
 
-        btn4.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn4.setText("4");
-        btn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn4);
 
-        equalsBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        equalsBtn.setFont(new Font("Tahoma", 1, 14)); 
         equalsBtn.setText("=");
-        equalsBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        equalsBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 equalsBtnActionPerformed(evt);
             }
         });
 
-        decimalPointBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        decimalPointBtn.setFont(new Font("Tahoma", 1, 14)); 
         decimalPointBtn.setText(".");
-        decimalPointBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        decimalPointBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 decimalPointBtnActionPerformed(evt);
             }
         });
 
-        btn0.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn0.setText("0");
-        btn0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn0);
 
-        divideBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        divideBtn.setFont(new Font("Tahoma", 1, 14)); 
         divideBtn.setText("/");
-        divideBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        divideBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 divideBtnActionPerformed(evt);
             }
         });
 
-        btn3.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn3.setText("3");
-        btn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn3);
 
-        btn2.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn2.setText("2");
-        btn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn2);
 
-        btn1.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         btn1.setText("1");
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
+        addActionEventLister(btn1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -318,60 +273,65 @@ public class CalculatorGUI extends JFrame {
         }
     }
     
-
-
-    private void btnActionPerformed(java.awt.event.ActionEvent evt) {
-        display.setText(display.getText() + evt.getActionCommand());
-
+    private void addActionEventLister(JButton btn){
+                btn.setFont(new Font("Tahoma", 1, 14)); 
+                btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnActionPerformed(evt);
+            }
+        });
     }
 
+    private void btnActionPerformed(ActionEvent evt) {
+        display.setText(display.getText() + evt.getActionCommand());
+    }
 
-    private void decimalPointBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void decimalPointBtnActionPerformed(ActionEvent evt) {
         if(!display.getText().contains(".")){
             display.setText(display.getText() + ".");
         }
         
     }
 
-    private void backSpaceBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void backSpaceBtnActionPerformed(ActionEvent evt) {
         if(display.getText().length() > 0){
-            StringBuilder back = new StringBuilder(display.getText());
+            StringBuffer back = new StringBuffer(display.getText());
             back.deleteCharAt(display.getText().length()-1);
             display.setText(back.toString());
         }
         
     }
 
-    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void clearBtnActionPerformed(ActionEvent evt) {
         display.setText("");
     }
 
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void addBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
         action=1;
         display.setText("");
         
     }
 
-    private void minusBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void minusBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
         action=2;
         display.setText("");
     }
 
-    private void multiplicationBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void multiplicationBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
         action=3;
         display.setText("");
     }
 
-    private void divideBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void divideBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
         action=4;
         display.setText("");
     }
 
-    private void equalsBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    private void equalsBtnActionPerformed(ActionEvent evt) {
         calc();
     }
 
@@ -379,26 +339,24 @@ public class CalculatorGUI extends JFrame {
     public static void main(String args[]) {
 
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException | InstantiationException |IllegalAccessException | UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CalculatorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Logger.getLogger(CalculatorGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CalculatorGUI().setVisible(true);
             }
         });
     }
 
-    private javax.swing.JButton addBtn,backSpaceBtn,btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,clearBtn,decimalPointBtn,minusBtn,divideBtn,equalsBtn,multiplicationBtn;
-    private javax.swing.JTextField display;
-
-
+    private JButton addBtn,backSpaceBtn,btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,clearBtn,decimalPointBtn,minusBtn,divideBtn,equalsBtn,multiplicationBtn;
+    private JTextField display;
     
 }
