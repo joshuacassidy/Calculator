@@ -27,7 +27,6 @@ public class CalculatorGUI extends JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
-
         display = new JTextField();
         addBtn = new JButton();
         clearBtn = new JButton();
@@ -247,29 +246,15 @@ public class CalculatorGUI extends JFrame {
     }// </editor-fold>                        
     
     private void calc(){
-        switch(action){
         
-           case 1:
-          ans = num + Double.parseDouble(display.getText());
-           display.setText(Double.toString(ans));
-            break;
-        
-        
-           case 2:
-          ans = num - Double.parseDouble(display.getText());
-           display.setText(Double.toString(ans));
-            break;
-                
-                
-           case 3:
-          ans = num * Double.parseDouble(display.getText());
-           display.setText(Double.toString(ans));
-            break;
-                    
-          case 4:
-          ans = num / Double.parseDouble(display.getText());
-           display.setText(Double.toString(ans));
-            break;
+        double currentDisplay = Double.parseDouble(display.getText());
+        double[] x = {num+currentDisplay,num-currentDisplay,num*currentDisplay,num/currentDisplay};
+        for(int i = 0; i < x.length; i++){
+            if(action == i){
+                ans = x[i];
+                display.setText(Double.toString( ans));
+                break;
+            }
         }
     }
     
@@ -308,26 +293,26 @@ public class CalculatorGUI extends JFrame {
 
     private void addBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
-        action=1;
+        action=0;
         display.setText("");
         
     }
 
     private void minusBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
-        action=2;
+        action=1;
         display.setText("");
     }
 
     private void multiplicationBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
-        action=3;
+        action=2;
         display.setText("");
     }
 
     private void divideBtnActionPerformed(ActionEvent evt) {
         num = Double.parseDouble(display.getText());
-        action=4;
+        action=3;
         display.setText("");
     }
 
