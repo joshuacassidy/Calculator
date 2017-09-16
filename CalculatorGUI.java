@@ -18,7 +18,7 @@ import javax.swing.WindowConstants;
 public class CalculatorGUI extends JFrame {
     double num,ans;
     int action;
-
+    String number;
     public CalculatorGUI() {
         initComponents();
     }
@@ -247,15 +247,19 @@ public class CalculatorGUI extends JFrame {
     
     private void calc(){
         
-        double currentDisplay = Double.parseDouble(display.getText());
+        double currentDisplay = Double.parseDouble(number);
+        System.out.println(number);
         double[] x = {num+currentDisplay,num-currentDisplay,num*currentDisplay,num/currentDisplay};
         for(int i = 0; i < x.length; i++){
             if(action == i){
                 ans = x[i];
-                display.setText(Double.toString( ans));
+                display.setText(Double.toString(ans));
                 break;
             }
         }
+        num = Double.parseDouble(display.getText());
+ 
+
     }
     
     private void addActionEventLister(JButton btn){
@@ -269,6 +273,11 @@ public class CalculatorGUI extends JFrame {
 
     private void btnActionPerformed(ActionEvent evt) {
         display.setText(display.getText() + evt.getActionCommand());
+        numberToBeUsed(evt.getActionCommand());
+    }
+    
+    private void numberToBeUsed(String x){
+        number = number + x;
     }
 
     private void decimalPointBtnActionPerformed(ActionEvent evt) {
@@ -292,28 +301,34 @@ public class CalculatorGUI extends JFrame {
     }
 
     private void addBtnActionPerformed(ActionEvent evt) {
-        num = Double.parseDouble(display.getText());
+        operationPreformed();
         action=0;
-        display.setText("");
-        
     }
 
     private void minusBtnActionPerformed(ActionEvent evt) {
-        num = Double.parseDouble(display.getText());
+        operationPreformed();
         action=1;
-        display.setText("");
+        
     }
 
     private void multiplicationBtnActionPerformed(ActionEvent evt) {
-        num = Double.parseDouble(display.getText());
+        operationPreformed();
         action=2;
-        display.setText("");
     }
 
     private void divideBtnActionPerformed(ActionEvent evt) {
-        num = Double.parseDouble(display.getText());
+        operationPreformed();
         action=3;
-        display.setText("");
+    }
+    
+    private void operationPreformed(){
+        try{
+            num = Double.parseDouble(display.getText());
+            display.setText("");
+            number = "";
+        } catch (NumberFormatException e){
+            
+        }
     }
 
     private void equalsBtnActionPerformed(ActionEvent evt) {
