@@ -16,9 +16,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
 
 public class CalculatorGUI extends JFrame {
-    double num,ans;
-    int action;
-    String number;
+    double num1,ans;
+    int action = -1;
+    String num2 = "";
     public CalculatorGUI() {
         initComponents();
     }
@@ -246,20 +246,21 @@ public class CalculatorGUI extends JFrame {
     }// </editor-fold>                        
     
     private void calc(){
-        
-        double currentDisplay = Double.parseDouble(number);
-        System.out.println(number);
-        double[] x = {num+currentDisplay,num-currentDisplay,num*currentDisplay,num/currentDisplay};
-        for(int i = 0; i < x.length; i++){
-            if(action == i){
-                ans = x[i];
-                display.setText(Double.toString(ans));
-                break;
+        try{
+            double currentDisplay = Double.parseDouble(num2);
+            double[] x = {num1+currentDisplay,num1-currentDisplay,num1*currentDisplay,num1/currentDisplay};
+            for(int i = 0; i < x.length; i++){
+                if(action == i){
+                    ans = x[i];         
+                    display.setText(ans == (long) ans ? String.format("%d",(long)ans) : String.format("%s",ans));
+                    break;
+                }
             }
-        }
-        num = Double.parseDouble(display.getText());
+            num1 = Double.parseDouble(display.getText());
  
-
+        } catch(NumberFormatException e){
+            display.setText(Double.toString(num1));
+        }
     }
     
     private void addActionEventLister(JButton btn){
@@ -276,13 +277,14 @@ public class CalculatorGUI extends JFrame {
         numberToBeUsed(evt.getActionCommand());
     }
     
-    private void numberToBeUsed(String x){
-        number = number + x;
+    private void numberToBeUsed(String nextNumberEntered){
+        num2 = num2 + nextNumberEntered;
     }
 
     private void decimalPointBtnActionPerformed(ActionEvent evt) {
         if(!display.getText().contains(".")){
             display.setText(display.getText() + ".");
+            numberToBeUsed(evt.getActionCommand());
         }
         
     }
@@ -297,6 +299,8 @@ public class CalculatorGUI extends JFrame {
     }
 
     private void clearBtnActionPerformed(ActionEvent evt) {
+        num1 = 0;
+        num2 ="";
         display.setText("");
     }
 
@@ -323,9 +327,9 @@ public class CalculatorGUI extends JFrame {
     
     private void operationPreformed(){
         try{
-            num = Double.parseDouble(display.getText());
+            num1 = Double.parseDouble(display.getText());
             display.setText("");
-            number = "";
+            num2 = "";
         } catch (NumberFormatException e){
             
         }
